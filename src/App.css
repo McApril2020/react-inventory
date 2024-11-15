@@ -1,0 +1,17 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+.container {
+  margin: 50px;
+}
+
+

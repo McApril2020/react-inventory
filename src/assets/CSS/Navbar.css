@@ -1,0 +1,48 @@
+.nav {
+    background-color: #00897B;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    position: relative;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-acct {
+    font-size: 30px;
+}
+
+.mis-inv {
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+.basket {
+    margin-right: 10px;
+}
+
+.btn-add {
+    color: white;
+    background-color: #00897B;        
+    border: none;              
+    padding: 10px 10px;       
+    font-size: 16px;          
+    cursor: pointer;        
+    margin-right: 5px;
+}
+
+.btn-add:focus {
+    outline: none;  
+    border: none;   
+}

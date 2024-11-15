@@ -1,0 +1,81 @@
+.button1 {
+    background-color: #f3f7fe;
+    color: #f53333;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: 0.3s;
+    margin-right: 5px;
+  }
+  
+  .button1:hover {
+    background-color: #f53333;
+    
+    color: #fff;
+  }
+
+.button2 {
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: 0.3s;
+    margin-left: 5px;
+  }
+  
+  .button2:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+  }
+  
+  .container-modal {
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .modal {
+    background-color: white;
+    padding: 30px 50px;
+    border-radius: 5px;
+    width: 400px;
+  }
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-modal {
+    display: flex;
+    justify-content: center;
+}
+  
