@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddItem from './AddItem';
+import Alert from './Alert';
+import axios from 'axios';
 import '../CSS/Items.css';
+import {Link} from 'react-router-dom';
 
-function Items({list, setLists}) {
+function Items({list, setLists, setIsOpen, setModalTitle, setModalItem, setRefresh}) {
     const {name, description, color, icon} = list;
-    // const item_len = props.item_len;
-    // const index = props.indx;
+    const [show, setShow] = useState(false);
+    const [warning, setWarning] = useState({});
+
     const stl = {
         textAlign: 'center',   
         fontSize: '100px',    
@@ -18,16 +22,82 @@ function Items({list, setLists}) {
         cursor: 'pointer'
     }
 
-    const [isEdit, setisEdit] = useState(false);
-    const [list_name, setList_name] = useState(name)
+    useEffect(() => {
+        return () => {
+            setTimeout(() => {
+                setRefresh(false)
+            }, 500)
+        }
+    }, [setRefresh])
+
+    async function remove() {
+        axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/mini-inventory/delete',
+            data: {id: list.id}
+        }).then(response => {
+            if(response.data.success) {
+                setShow(true);
+                setWarning(currWarning => ({
+                    ...currWarning,
+                    isOn: true,
+                    alert: 'success',
+                    message: response.data.message
+                }))
+                setIsOpen(false);
+                setRefresh(true);
+            }
+        }).catch(err => {
+            setShow(true);
+            setWarning(currWarning => ({
+                ...currWarning,
+                isOn: true,
+                alert: 'warning',
+                message: err
+            }))
+        })
+        
+        // setShow(true);
+        // setWarning(currWarning => ({
+        //     ...currWarning,
+        //     isOn: true,
+        //     alert: 'warning',
+        //     message: 'Deleted'
+        // }))
+    }   
   
     return (
-        <>
+        <>   
+            {show && (<Alert warning={warning} setWarning={setWarning} setShow={setShow}/>)}
             <div className="card">
-                <i className={icon} style={stl} onClick={() => {
-                console.log('icon')
-            }}></i>
+                <Link key={list.id} to={`/list/${list.title}`} state={list}>
+                    <i className={icon} style={stl}></i>
+                </Link>
                 <div className="card-content" >
+                    <h2 className="card-title">{name}</h2>
+                    <p className="card-description">{description} </p>
+                    <div className="btn-container">
+                        <button className="circular-button btn-plus" onClick={() => {
+                                setModalItem(currModalItem => ({
+                                    ...currModalItem,
+                                    id: list.id,
+                                    name: list.name,
+                                    description: list.description,
+                                    icon: list.icon,
+                                    color: list.color
+                                }))
+                                setIsOpen(currModal => !currModal)
+                                setModalTitle(`Update ${list.name} List`)
+                            }}>
+                            <i className="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button className="circular-button btn-minus" onClick={remove}>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                    </div>
+                </div>
+                {/* <div className="card-content" >
+                    
                     {isEdit ? <input 
                                 type="text" 
                                 name="name" 
@@ -92,7 +162,7 @@ function Items({list, setLists}) {
                             <i className="fa fa-trash" aria-hidden="true"></i>
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>
             {/* {item_len == (index + 1) && (
                 <div className="btn-con">

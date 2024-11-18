@@ -1,0 +1,67 @@
+.container-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.card-404 {
+    width: 400px;
+    height: 320px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    gap: 13px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  }
+
+  .icon-404 {
+    font-size: 50px;
+  }
+
+  .heading-404 {
+    font-size: 1.2em;
+    font-weight: 800;
+    color: rgb(26, 26, 26);
+  }
+  
+  .description-404 {
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgb(99, 99, 99);
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  
+  .acceptButton {
+    width: 80px;
+    height: 30px;
+    background-color: #43404d;
+    transition-duration: .2s;
+    border: none;
+    color: rgb(241, 241, 241);
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px #7b7591, 0 2px 4px -1px #3d3752;
+    transition: all .6s ease;
+  }
+  
+  .acceptButton:hover {
+    background-color: #837f94;
+    box-shadow: 0 10px 15px -3px #bcb7ce, 0 4px 6px -2px #aba2cc;
+    transition-duration: .2s;
+  }

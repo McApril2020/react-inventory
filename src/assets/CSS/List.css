@@ -1,0 +1,150 @@
+.container {
+    padding: 50px;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* From Uiverse.io by JohnnyCSilva */ 
+.card-list {
+    width: 100%;
+    max-width: 100%;
+    height: 120px;
+    background: #353535;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+    margin-bottom: 10px;
+  }
+  
+  .card-list:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .img {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .card-list:hover > {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#9198e5, #712020);
+  }
+  
+  .textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: white;
+    font-family: 'Poppins' sans-serif;
+  }
+  
+  .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+  }
+
+  .sub-txt {
+    padding-left: 10px;
+  }
+  
+  .span {
+    font-size: 11px;
+    padding-right: 10px;
+  }
+  
+  .h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .p {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+
+  .btn-back {
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: transparent;
+    border: 1px solid #353535;
+    color: #353535;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  
+  .btn-back:hover {
+    background-color: transparent;
+    box-shadow: 0 0 20px #e0e2e550;
+    transform: scale(1.1);
+  }
+  
+  .btn-back:active {
+    background-color: transparent;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+
+  .btn-add-list {
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 100px;
+    background-color: transparent;
+    border: 1px solid #353535;
+    color: #353535;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-add-list:hover {
+    background-color: transparent;
+    box-shadow: 0 0 20px #e0e2e550;
+    transform: scale(1.1);
+    margin-left: 10px;
+  }
+  
+  .btn-add-list:active {
+    background-color: transparent;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  .icon-container {
+    background-color: #f0f0f0; /* Just for visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

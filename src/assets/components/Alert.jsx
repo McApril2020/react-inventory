@@ -41,7 +41,7 @@ function Alert({warning, setWarning, setShow}) {
             {warning.isOn && (
                 <div className={`cards ${isVisible ? 'fade-in' : 'fade-out'}`}>
                     <div className="" style={icon}>
-                        <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        <i className="fa fa-exclamation-triangle alert-icon" aria-hidden="true"></i>
                     </div>
                     <div className="message-text-container">
                         <p className="message-text" style={{color : color}}>{type}</p>

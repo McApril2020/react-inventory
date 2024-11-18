@@ -1,6 +1,6 @@
 import '../CSS/Navbar.css';
 
-function Navbar({setIsOpen}) {
+function Navbar({setIsOpen, setModalTitle, setModalItem}) {
     return (
         <div className='nav'>
             <div className="nav-list">
@@ -11,6 +11,15 @@ function Navbar({setIsOpen}) {
                 <div className="nav-item">
                     <button className='btn-add' onClick={() => {
                         setIsOpen(currModal => !currModal)
+                        setModalItem(currModalItem => ({
+                            ...currModalItem,
+                            id: '',
+                            name: '',
+                            description: '',
+                            icon: '',
+                            color: ''
+                        }))
+                        setModalTitle('Add New List Item')
                     }}>
                         <i className="fa fa-plus " aria-hidden="true"></i>
                     </button>

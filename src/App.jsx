@@ -11,10 +11,13 @@ function App() {
   const [lists, setLists] = useState([]);
   const [warning, setWarning] = useState({});
   const [refresh, setRefresh] = useState(false);
+  const [modal_title, setModalTitle] = useState('');
+  const [modal_item, setModalItem] = useState({});
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
+    
     const fetch_items = async () => {
-      console.log('test')
       try {
         const response = await fetch('http://localhost:3000/api/mini-inventory/items');
         if(response.ok) {
@@ -48,24 +51,32 @@ function App() {
     fetch_items();
   }, [refresh]);
 
-  const [isOpen, setIsOpen] = useState(false)
+  
 
   return (
     <div>
       {show && (<Alert warning={warning} setWarning={setWarning} setShow={setShow}/>)}
-      <Navbar setIsOpen={setIsOpen}/>
+      <Navbar setIsOpen={setIsOpen} setModalTitle={setModalTitle} setModalItem={setModalItem}/>
       <div className="container">
         {lists.map((list) => (
           list.status == 1 ? (
-            <Items list={list} key={list.id} setLists={setLists}/>
+            <Items 
+            list={list} 
+            key={list.id} 
+            setLists={setLists}
+            setModalTitle={setModalTitle}
+            setModalItem={setModalItem}
+            setIsOpen={setIsOpen}
+            setRefresh={setRefresh}
+            />
           ) : ''
         ))}
       </div>
       {isOpen && (
         <Modal 
+          modal_item={modal_item}
+          modal_title={modal_title}
           setIsOpen={setIsOpen} 
-          lists={lists} 
-          setLists={setLists} 
           setRefresh={setRefresh}/>
       )}
     </div>
